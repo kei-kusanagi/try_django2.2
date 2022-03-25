@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 
 def home_page(request):
-    return HttpResponse('<h1>Hola Mundo </h1>')
+    return HttpResponse('<h1>Hola Mundo</h1>')
 
 
 def about(request):
@@ -12,3 +12,5 @@ def about(request):
 
 def contact(request):
     return HttpResponse('<h1>Contact</h1>')
+    
+    
