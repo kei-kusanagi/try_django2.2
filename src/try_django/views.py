@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.template.loader import get_template
 
 
 def home_page(request):
@@ -21,8 +22,9 @@ def contact(request):
     
 def example_page(request):
     context = {"title": "Example"}
-    algo_aqui = "hello_world.html"
-    return HttpResponse(algo_aqui)
+    template_name = "hello_world.html"
+    template_obj = get_template(template_name)
+    return HttpResponse(template_obj.render(context))
 
     
     
