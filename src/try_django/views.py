@@ -19,4 +19,10 @@ def contact(request):
     return render(request, 'hello_world.html', {"title": "Contact us"})
 
     
+def example_page(request):
+    context = {"title": "Example"}
+    algo_aqui = "hello_world.html"
+    return HttpResponse(algo_aqui)
+
+    
     

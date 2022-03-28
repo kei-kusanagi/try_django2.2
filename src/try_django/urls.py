@@ -17,11 +17,12 @@ from operator import index
 from django import views
 from django.contrib import admin
 from django.urls import path
-from .views import home_page, about, contact
+from .views import home_page, about, contact, example_page
 
 urlpatterns = [
     path('', home_page),
     path('about/', about),
     path('contact/', contact),
     path('admin/', admin.site.urls),
+    path('example/', example_page),
 ]
