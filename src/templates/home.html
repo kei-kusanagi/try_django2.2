@@ -10,12 +10,11 @@
 
 {{ user }}
 {{ user.is_authenticated }}
+<img src="{{ imagen }}" alt="MDN">
 
-{% if user.is_authenticated %}
-    <h1> User only data</h1>
-    {% for n in my_list %}
-     <li>{{ n }}</li>
-    {% endfor %}
-{% endif %}
+{% for n in my_list %}
+    <li>{{ n }}</li>
+{% endfor %}
+
 
 {% endblock %}
