@@ -18,3 +18,18 @@ def blog_post_detail_page(request, slug):
     template_name = 'blog_post_detail.html'
     context = {"object": obj} # {"title": obj.title}
     return render(request, template_name, context)
+
+def blog_post_list_view(request):
+    return
+    
+def blog_post_create_view(request):
+    return
+
+def blog_post_retrive_view(request):
+    return
+
+def blog_post_update_view(request):
+    return
+
+def blog_post_delete_view(request):
+    return
