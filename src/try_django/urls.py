@@ -18,12 +18,20 @@ from django import views
 from django.contrib import admin
 from django.urls import path
 from .views import home_page, about, contact, example_page
-from blog.views import blog_post_detail_page
+from blog.views import (
+    blog_post_detail_page, 
+    blog_post_list_view, 
+    blog_post_create_view
+)
 
 urlpatterns = [
     path('', home_page),
-    # path('blog/', blog_post_detail_page),
+    path('blog/', blog_post_list_view),
+
+    path('blog-new/', blog_post_create_view),
+
     path('blog/<str:slug>/', blog_post_detail_page),
+    
     path('about/', about),
     path('contact/', contact),
     path('admin/', admin.site.urls),
