@@ -6,8 +6,6 @@ from django.http import Http404
 from .models import BlogPost
 
 
-
-
 def blog_post_list_view(request):
     # lista de objetos
     # puede ser una busqueda
