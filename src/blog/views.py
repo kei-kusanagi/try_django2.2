@@ -20,8 +20,12 @@ def blog_post_detail_page(request, slug):
     return render(request, template_name, context)
 
 def blog_post_list_view(request):
-    return
-    
+    # lista de objetos
+    # puede ser una busqueda
+    template_name = 'blog_post_list_html'
+    context = {'object_list': []}
+    return render(request, template_name, context)
+
 def blog_post_create_view(request):
     return
 
