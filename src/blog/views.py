@@ -2,11 +2,14 @@ from re import template
 from turtle import title
 from django.shortcuts import get_object_or_404, render
 from django.http import Http404
+import datetime
+
 
 # Create your views here.
-from .forms import BlogPostForm
+from .forms import BlogPostModelForm
 from .models import BlogPost
 
+now = str(datetime.date.today())
 
 def blog_post_list_view(request):
     # lista de objetos
@@ -21,11 +24,14 @@ def blog_post_list_view(request):
 def blog_post_create_view(request):
     # crear objetos
     # ? usar form
-    form = BlogPostForm(request.POST or None)
+    form = BlogPostModelForm(request.POST or None)
     if form.is_valid():
         
-        obj = BlogPost.objects.create(**form.cleaned_data)
-        form = BlogPostForm()
+        obj = form.save(commit=False)
+        obj.title = form.cleaned_data.get("title") + '/' + now
+        obj.save()
+
+        form = BlogPostModelForm()
     template_name = 'form.html'
     context = {'form': form}
     return render(request, template_name, context)
